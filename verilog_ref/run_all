@@ -1,0 +1,6 @@
+vlog -work work var_fifo.v
+vsim work.var_fifo
+do wave.do
+
+run 6000ns
+

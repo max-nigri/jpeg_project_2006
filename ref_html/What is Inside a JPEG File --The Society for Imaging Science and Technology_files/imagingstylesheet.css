@@ -1,0 +1,27 @@
+TD {
+	FONT-SIZE: x-small; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+FONT {
+	FONT-SIZE: x-small; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+P {
+	FONT-SIZE: x-small; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+.navb {
+	MARGIN-TOP: 20px; FONT-SIZE: x-small; MARGIN-LEFT: 10px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+A {
+	FONT-WEIGHT: bold; COLOR: #003366; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #003366; BACKGROUND-COLOR: transparent
+}
+A:visited {
+	COLOR: #003366; BACKGROUND-COLOR: transparent
+}
+A:active {
+	COLOR: #cc0; BACKGROUND-COLOR: transparent
+}
+A:hover {
+	COLOR: #f60; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}

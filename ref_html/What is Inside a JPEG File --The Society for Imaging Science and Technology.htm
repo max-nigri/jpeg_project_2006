@@ -1,0 +1,636 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0074)http://www.imaging.org/resources/web_tutorials/inside_jpeg/inside_jpeg.cfm -->
+<!-- This file created by AppWiz --><!-- Copyright (c) 2001 Advanced Solutions International, Inc.  All rights reserved --><!-- Author: Woody Archer --><HTML><HEAD><TITLE>What is Inside a JPEG File --The Society for Imaging Science and Technology</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1255">
+<META content=test name=keywords>
+<META content=test name=description>
+<META http-equiv=Expires content="Tue, 19 Dec 2006 4:24:30">
+<META http-equiv=Pragma content=no-cache>
+<META 
+content="The Society for Imaging Science and Technology -- webmaster@imaging.org" 
+name=AUTHOR>
+<META content=test name=description>
+<META content=test name=keywords><LINK 
+href="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/imagingstylesheet.css" 
+type=text/css rel=styleSheet>
+<SCRIPT language=JavaScript>
+<!--
+
+browserName = navigator.appName;
+browserVer = parseInt(navigator.appVersion);
+
+var version = "n2";
+
+if ((navigator.appCodeName == 'Mozilla') && (navigator.appVersion.substring(0,1) > 2)) {
+        version = "n3+";
+        }
+        
+if ((navigator.appCodeName == 'MSIE') && (navigator.appVersion.substring(0,1) > 3)) {
+        version = "n3+";
+        }
+
+if (version == "n3+") {
+
+
+nav_conf_on = new Image();
+nav_conf_on.src = "/images/new/nav_conf_over.gif";
+nav_conf_off = new Image();
+nav_conf_off.src="/images/new/nav_conf.gif";
+
+nav_pub_on = new Image();
+nav_pub_on.src = "/images/new/nav_pub_over.gif";
+nav_pub_off = new Image();
+nav_pub_off.src="/images/new/nav_pub.gif";
+
+nav_res_on = new Image();
+nav_res_on.src = "/images/new/nav_res_over.gif";
+nav_res_off = new Image();
+nav_res_off.src="/images/new/nav_res.gif";
+
+nav_car_on = new Image();
+nav_car_on.src = "/images/new/nav_car_over.gif";
+nav_car_off = new Image();
+nav_car_off.src="/images/new/nav_car.gif";
+
+nav_mem_on = new Image();
+nav_mem_on.src = "/images/new/nav_mem_over.gif";
+nav_mem_off = new Image();
+nav_mem_off.src="/images/new/nav_mem.gif";
+
+nav_stor_on = new Image();
+nav_stor_on.src = "/images/new/nav_stor_over.gif";
+nav_stor_off = new Image();
+nav_stor_off.src="/images/new/nav_stor.gif";
+
+nav_members_on = new Image();
+nav_members_on.src = "/images/new/nav_members_over.gif";
+nav_members_off = new Image();
+nav_members_off.src="/images/new/nav_members.gif";
+
+nav_login_on = new Image();
+nav_login_on.src = "/images/new/nav_login_over.gif";
+nav_login_off = new Image();
+nav_login_off.src="/images/new/nav_login.gif";
+
+
+nav_logoff_on = new Image();
+nav_logoff_on.src = "/images/new/nav_logoff_over.gif";
+nav_logoff_off = new Image();
+nav_logoff_off.src="/images/new/nav_logoff.gif";
+
+
+nav_search_on = new Image();
+nav_search_on.src = "/images/new/nav_search_over.gif";
+nav_search_off = new Image();
+nav_search_off.src="/images/new/nav_search.gif";
+
+
+}
+
+function imgswap(imgDocID,imgObjName) {
+        if (version == "n3+") {
+        document.images[imgDocID].src = eval(imgObjName + ".src")
+}}
+
+
+
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR></HEAD>
+<BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0"><FONT 
+face=arial,helvetica color=#000000>
+<TABLE cellSpacing=0 cellPadding=0 width=717 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD width=717 colSpan=2><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_1.jpg" 
+      width=85><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_2.jpg" 
+      width=85><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_3.jpg" 
+      width=88><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_4.jpg" 
+      width=73><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_5.jpg" 
+      width=58><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_6.jpg" 
+      width=80><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_7.jpg" 
+      width=43><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_8.jpg" 
+      width=63><IMG height=181 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/home_new_9.jpg" 
+      width=142 useMap=#Map border=0><MAP name=Map><AREA shape=POLY 
+        coords=34,129,19,129,3,158,9,169,125,169,125,148,45,148 
+        href="http://www.imaging.org/index.cfm"></MAP></TD></TR>
+  <TR>
+    <TD align=middle width=717 colSpan=2><A 
+      onmouseover="imgswap('nav_conf','nav_conf_on')" 
+      onmouseout="imgswap('nav_conf','nav_conf_off')" 
+      href="http://www.imaging.org/conferences"><IMG alt=Conferences hspace=0 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/nav_conf.gif" 
+      border=0 name=nav_conf></A><A 
+      onmouseover="imgswap('nav_pub','nav_pub_on')" 
+      onmouseout="imgswap('nav_pub','nav_pub_off')" 
+      href="http://www.imaging.org/pubs"><IMG alt=Publications hspace=0 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/nav_pub.gif" 
+      border=0 name=nav_pub></A><A onmouseover="imgswap('nav_res','nav_res_on')" 
+      onmouseout="imgswap('nav_res','nav_res_off')" 
+      href="http://www.imaging.org/resources"><IMG alt=Resources hspace=0 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/nav_res.gif" 
+      border=0 name=nav_res></A><A onmouseover="imgswap('nav_car','nav_car_on')" 
+      onmouseout="imgswap('nav_car','nav_car_off')" 
+      href="http://www.imaging.org/careers"><IMG alt=Careers hspace=0 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/nav_car.gif" 
+      border=0 name=nav_car></A><A onmouseover="imgswap('nav_mem','nav_mem_on')" 
+      onmouseout="imgswap('nav_mem','nav_mem_off')" 
+      href="http://www.imaging.org/membership"><IMG alt=Membership hspace=0 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/nav_mem.gif" 
+      border=0 name=nav_mem></A><A 
+      onmouseover="imgswap('nav_stor','nav_stor_on')" 
+      onmouseout="imgswap('nav_stor','nav_stor_off')" 
+      href="http://www.imaging.org/store"><IMG alt=Store hspace=0 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/nav_stor.gif" 
+      border=0 name=nav_stor></A><A 
+      onmouseover="imgswap('nav_login','nav_login_on')" 
+      onmouseout="imgswap('nav_login','nav_login_off')" 
+      href="https://www.imaging.org/source/security/member-logon.cfm"><IMG 
+      alt=Login hspace=0 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/nav_login.gif" 
+      border=0 name=nav_login></A><A 
+      onmouseover="imgswap('nav_search','nav_search_on')" 
+      onmouseout="imgswap('nav_search','nav_search_off')" 
+      href="http://www.imaging.org/search.cfm"><IMG alt=" Search" hspace=0 
+      src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/nav_search.gif" 
+      border=0 name=nav_search></A></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=717 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=200 
+    background="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/brownbkgnd.jpg" 
+    bgColor=#cccc99>
+      <P class=navb><B>Web Tutorials</B></P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/printing.cfm">A 
+      Tutorial on Printing</A><BR>James C. Owens </P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/solid_ink.cfm">Color 
+      Solid Ink Printing</A><BR>C. Wayne Jaeger, <EM>Xerox Corporation</EM></P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/inkjet.cfm">Progress 
+      and Trends in Ink-jet Printing Technology <BR></A>Hue P. Le, <BR><I>Le 
+      Technologies, Inc., Beaverton, Oregon</I></P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/printing_press/printing_press.cfm">How 
+      a printing press works</A><BR>Eric Hanson, <BR><EM>Hewlett Packard 
+      Laboratories</EM> </P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/inkjet_files/inkjet.cfm">How 
+      an ink jet printer works </A><BR>Eric Hanson, <BR><EM>Hewlett Packard 
+      Laboratories</EM> </P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/xerography.cfm">Electrophotography 
+      Overview</A><BR>Howard Mizes, Dan Hays, and Nancy Goodman<BR><EM>Xerox 
+      Corporation</EM></P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/photothermography.cfm">An 
+      Introduction to Photothermography</A><BR>M. R. V. Sahyun</P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/telescope/telescope.cfm">How 
+      a Telescope Works </A><BR>Russ Palum,<BR><EM>Eastman Kodak Company</EM> 
+      </P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/digital_image/digital_image.cfm">How 
+      a picture can be represented as a collection of numbers </A><BR>James 
+      Milch, <BR><EM>Eastman Kodak Company</EM> </P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/Image_Capture/image_capture.cfm">Image 
+      Capture Beyond 24-Bit RGB</A><BR>Donald S. Brown, <BR><EM>Eastman Kodak 
+      Company</EM> </P>
+      <P class=navb><A 
+      href="http://www.imaging.org/resources/web_tutorials/inside_jpeg/inside_jpeg.cfm">What 
+      is Inside a JPEG File</A><BR>Carl Salvaggio, <BR><EM>Rochester Institute 
+      of Technology </EM></P></TD></TD>
+    <TD vAlign=top width=552><BR><BR>
+      <BLOCKQUOTE><FONT face=arial,helvetica><FONT color=#ffffff></FONT>
+        <H1>What is Inside a JPEG File</H1>
+        <P><B>Carl Salvaggio, Rochester Institute of Technology </B></P>
+        <P>During the recent transition from conventional to digital 
+        photography, most consumers use the term JPEG ubiquitously as a 
+        reference to digital images. It is common to hear someone refer to a 
+        digital image as a JPEG file. In general, most digital cameras on the 
+        market today are capable of storing photographs in this file format. As 
+        common as these files are in everyone's life, very few users actually 
+        know what goes on inside a JPEG file and still fewer understand the many 
+        pitfalls associated with using this choice when storing their digital 
+        photographs. This essay will describe the inner working of this file 
+        format that we so commonly use, highlighting its many merits and it many 
+        flaws. Like any tool that is available to us, there are correct ways to 
+        use the JPEG file format and there are times when it is a poor choice. 
+        Once you understand how this format works, hopefully the choices will be 
+        obvious and you can more wisely take advantage of this truly remarkable 
+        technique.</P>
+        <P>The Joint Photographic Experts Group (JPEG) format for image storage 
+        represents a series of techniques aimed at reducing the redundancy 
+        present in most image data. Redundancy is defined as "the use of words 
+        or data that could be omitted without loss of meaning or function; 
+        repetition or superfluity of information" by the Oxford American 
+        Dictionary. Digital images show redundancy in data in several ways.</P>
+        <P>The brightness value or digital count of two neighboring pixels is 
+        more often than not similar, if not the same, in magnitude. That being 
+        the case, you would more often than not be correct if you were to guess 
+        that the next pixel's brightness count value in a row of picture 
+        elements was the same as the previous pixel's value. If that is indeed 
+        the case, then it can be said that we don't need to use all of the data 
+        in an image to represent the information in the photograph. This 
+        particular type of redundancy is known as inter-pixel redundancy. </P>
+        <P>The manner in which we represent photographs as digital images is by 
+        using numbers between 0 (black) and 255 (white). Why this choice for a 
+        scale? These are the values that can be stored in a single byte of 
+        memory. So by design, we use 8-bits of data (8 bits = 1 byte) to 
+        represent every pixel's brightness in an image. This, however, is not 
+        the most efficient means of representing this information. Claude 
+        Shannon proposed many of the elements that make up modern information 
+        theory, the most relevant to this problem being that it is more 
+        efficient to use short words to represent more commonly occurring events 
+        and reserve longer words for those events that occur less frequently. 
+        Shannon's "events" in the case of digital imagery are pixels with 
+        particular digital counts. Shannon proposed that we should use fewer 
+        bits to represent digital count values that occur more frequently in an 
+        image and greater numbers of bits to represent those digital counts that 
+        occur less often. This efficient means of representing digital counts is 
+        known as "coding" and reduces what is known as coding redundancy.</P>
+        <P>Lastly, the human visual system, as remarkable as it is, is easy to 
+        fool. If you reduce the number of digital count values that are used to 
+        represent the scale from black to white in a digital image, the human 
+        visual system is slow to pick up on the differences. For example, if the 
+        number of digital counts is reduced from 256 to 64 using straightforward 
+        grey-level quantization, very few observers will notice the difference 
+        (see figure below). This obviously will depend on the image content; 
+        however, the weaknesses of the human visual system can be exploited to 
+        reduce the third type of data redundancy in images known as 
+        psycho-visual redundancy.</P>
+        <P>
+        <TABLE cellSpacing=0 align=center border=0>
+          <TBODY>
+          <TR>
+            <TD align=middle><IMG height=164 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image003.gif" 
+              width=164 border=0></TD>
+            <TD align=middle><IMG height=164 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image006.gif" 
+              width=164 border=0></TD></TR>
+          <TR>
+            <TD align=middle>(a)</TD>
+            <TD align=middle>(b)</TD></TR></TBODY></TABLE><I><B>Psycho-visual 
+        redundancy</B> - The difference between digital images to the human 
+        visual system is often in indistinguishable. The image represented in 
+        (a) uses 256 unique digital counts to represent the scale from black to 
+        white while the image in (b) only uses 64 unique values to represent 
+        this same scale.</I></P>
+        <P>So the committee who designed what is today referred to as JPEG set 
+        out to minimize each of these redundancies as much as possible and in a 
+        computationally efficient manner. This is a process known as image 
+        compression. </P>
+        <P>The JPEG image compression technique consists of 5 functional stages. 
+        They are </P>
+        <OL>
+          <LI>an RGB to YCC color space conversion, 
+          <LI>a spatial subsampling of the chrominance channels in YCC space, 
+          <LI>the transformation of a blocked representation of the YCC spatial 
+          image data to a frequency domain representation using the discrete 
+          cosine transform, 
+          <LI>a quantization of the blocked frequency domain data according to a 
+          user-defined quality factor, and finally 
+          <LI>the coding of the frequency domain data, for storage, using 
+          Huffman coding.</LI></OL>
+        <P>The human visual system relies more on spatial content and acuity 
+        than it does on color for interpretation. For this reason, a color 
+        photograph, represented by a red, green, and blue image, is transformed 
+        to different color space that attempts to isolate these two components 
+        of image content; namely the YCC or 
+        luminance/chrominance-red/chrominance-blue color space. This color space 
+        transformation is performed on a pixel-by-pixel basis with the digital 
+        counts being converted according to the following rules<BR><BR><IMG 
+        height=67 alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image009.gif" 
+        width=279 border=0></P>
+        <P>where the R, G, and B terms represent the red, green, and blue 
+        digital count for a particular pixel and the Bit Depth is the number of 
+        bits used to store each pixel's brightness value (typically 8 for most 
+        consumer cameras). An example transformation is shown below.</P>
+        <TABLE cellSpacing=0 align=center border=0>
+          <TBODY>
+          <TR>
+            <TD align=middle><IMG height=134 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image012.gif" 
+              width=118 border=0></TD>
+            <TD align=middle><IMG height=134 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image015.gif" 
+              width=118 border=0></TD>
+            <TD align=middle><IMG height=134 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image018.gif" 
+              width=118 border=0></TD>
+            <TD align=middle><IMG height=134 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image021.gif" 
+              width=118 border=0></TD></TR>
+          <TR>
+            <TD align=middle>RGB </TD>
+            <TD align=middle>Y</TD>
+            <TD align=middle>Cb </TD>
+            <TD align=middle>Cr</TD></TR></TBODY></TABLE>
+        <P><I><B>RGB to YCC Conversion</B> - The original RGB image and the 
+        computed luminance (Y), chrominance-blue (Cb), and chrominance-red (Cr) 
+        images.</I></P>
+        <P>The luminance image carries the majority of the spatial information 
+        of the original image and is indeed just a weighted average of the 
+        original red, green, and blue digital count values for each pixel. The 
+        two chrominance images show very little spatial detail. This is 
+        fortuitous for the goal of compression. </P>
+        <P>The JPEG process subsamples the individual chrominance images before 
+        proceeding to half the number of individual rows and columns. Since 
+        there is little spatial detail in these channels, the subsampling does 
+        not discard much meaningful data. This results in one quarter of the 
+        number of pixels where in the original representations. The human visual 
+        system is; however, easily fooled and the resulting true color image 
+        that is formed by inverting this subsampling/color space transformation 
+        process is virtually indistinguishable from the original unless viewed 
+        at very high magnifications.</P>
+        <TABLE cellSpacing=0 align=center border=0>
+          <TBODY>
+          <TR>
+            <TD align=middle><IMG height=136 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image015.gif" 
+              width=120 border=0></TD>
+            <TD vAlign=bottom align=middle><IMG height=77 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image025.gif" 
+              width=67 border=0></TD>
+            <TD vAlign=bottom align=middle><IMG height=77 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image028.gif" 
+              width=67 border=0></TD>
+            <TD align=middle><IMG height=136 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image031.gif" 
+              width=120 border=0></TD></TR>
+          <TR>
+            <TD align=middle>Y</TD>
+            <TD align=middle>Cb</TD>
+            <TD align=middle>Cr</TD>
+            <TD align=middle>(a)</TD></TR>
+          <TR>
+            <TD align=middle></TD>
+            <TD align=middle></TD>
+            <TD align=right></TD>
+            <TD align=right><IMG height=123 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image034.gif" 
+              width=123 border=0></TD></TR>
+          <TR>
+            <TD align=middle></TD>
+            <TD align=middle></TD>
+            <TD align=middle></TD>
+            <TD align=middle>(b)</TD></TR>
+          <TR>
+            <TD align=middle></TD>
+            <TD align=middle></TD>
+            <TD align=middle></TD>
+            <TD align=right><IMG height=123 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image037.gif" 
+              width=123 border=0></TD></TR>
+          <TR>
+            <TD align=middle></TD>
+            <TD align=middle></TD>
+            <TD align=middle></TD>
+            <TD align=middle>(c)</TD></TR></TBODY></TABLE>
+        <P><I><B>Inverse subsampling/color space transform</B> - The result of 
+        the (a) inverse subsampling/color space transformation is virtually 
+        indistinguishable from the original image shown in the previous figure. 
+        The effects of subsampling can be seen in the magnified image 
+        subsections shown for the (b) original image and the resulting (c) 
+        inverse transformed image.</I></P>
+        <P><IMG height=164 alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image040.gif" 
+        width=164 align=left border=0>As the first two phases of the JPEG 
+        process attempt to take advantage of the weaknesses in the human visual 
+        system and reduce psycho-visual redundancy, the next phase attempts to 
+        exploit the inter-pixel redundancy present in most image data. If an 
+        image is broken up into small subsections or blocks, the likelihood that 
+        the pixels in these blocks will have similar digital count levels is 
+        high for the majority of the blocks throughout the image. Blocks that 
+        include high contrast image features such as edges will obviously not 
+        exhibit this behavior.</P>
+        <P><I><B>Image blocks</B> - A small section of the image previously 
+        shown that has been segmented into blocks that are 8x8 pixels in 
+        size.</I></P>
+        <P>As can be seen in the previous figure, almost half of the blocks 
+        shown contain skin-toned pixels with very little high frequency 
+        information. The advantageous result of this fact is that the 
+        frequency-domain representation of the data in any one of these blocks 
+        that exhibits grey-level constancy in the luminance or chrominance will 
+        consist of relatively few non-zero or significant values. The frequency 
+        domain transformation chosen by the JPEG members is the discrete cosine 
+        transform (DCT). This was chosen over the more traditional Fourier 
+        transform since it produces real-valued rather than imaginary-valued 
+        transform coefficients that are more easily stored in a compact fashion 
+        in memory. The DCT coefficients are computed for a one-dimensional 
+        function as follows. </P><IMG height=41 alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image043.gif" 
+        width=371 border=0><BR><BR><IMG alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image046.gif" 
+        border=0> 
+        <P>where M is the number of points in the function f(x). The DCT is 
+        performed on two-dimensional data sets as a series of consecutive 
+        one-dimensional transformations on the rows and subsequently the columns 
+        of the two dimensional array. The inverse transformation to take the 
+        frequency domain data back to the original spatial image data space is 
+        given by</P><IMG height=41 alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image049.gif" 
+        width=369 border=0><BR><BR><IMG alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image046.gif" 
+        border=0> 
+        <P>So for each 8x8 block of pixels in the original luminance and 
+        chrominance images, the DCT is computed. For the majority of blocks in 
+        the image, only some small number of the 64 pixels in the 8x8 block will 
+        have DCT coefficients that are significant in magnitude. The following 
+        figure illustrates the results of a DCT transformation on two blocks of 
+        varying degrees of grey-level constancy. </P>
+        <TABLE>
+          <TBODY>
+          <TR>
+            <TD><IMG height=155 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image054.gif" 
+              width=155 border=0></TD>
+            <TD><IMG height=155 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image057.gif" 
+              width=155 border=0></TD>
+            <TD><IMG height=155 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image060.gif" 
+              width=155 border=0></TD></TR></TBODY></TABLE><IMG height=177 alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/a.gif" 
+        width=490 border=0> 
+        <TABLE>
+          <TBODY>
+          <TR>
+            <TD><IMG height=155 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image063.gif" 
+              width=155 border=0></TD>
+            <TD><IMG height=155 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image066.gif" 
+              width=155 border=0></TD>
+            <TD><IMG height=155 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image069.gif" 
+              width=155 border=0></TD></TR></TBODY></TABLE><IMG height=180 alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/b.gif" 
+        width=479 border=0> 
+        <P><I><B>DCT transform</B> - The discrete cosine transform coefficients 
+        represent the power of each frequency present in the sub-image blocks 
+        shown in the images to the left. The images in the center are a 
+        magnified version of the sub-image block shown. The images to the right 
+        represent a scaled visualization of the discrete cosine transform 
+        coefficients shown in the tables below each set of images. The data 
+        shown in (a) represent a smooth area in the original image while those 
+        shown in (b) represent a higher frequency region.</I></P>
+        <P>The DCT coefficients are computed for each 8x8 block of pixels in the 
+        image. To this point, the entire JPEG process is completely reversible 
+        except for the losses due to subsampling of the two chrominance 
+        channels.</P>
+        <P>The next processing step in the chain of computations that make up 
+        JPEG image compression is the quantization of the DCT coefficients in 
+        each of the 8x8 blocks. It is at this step that the process is able to 
+        achieve the most compression; however, it is at the expense of image 
+        quality. The entire process becomes what is referred to in the image 
+        compression community as "lossy". The process is still reversible, 
+        however, it can no longer exactly reproduce the original image data.</P>
+        <P>As we have already seen, the DCT coefficients get smaller in 
+        magnitude as one moves away from the lowest frequency component (always 
+        located in the upper left hand corner of the 8x8 block). Quantization of 
+        the DCT coefficients scales each of the DCT coefficients by a 
+        prescribed, and unique factor, whose strength relies on the quality 
+        factor specified by the user. The JPEG committee prescribes for the 
+        luminance channel and for both chrominance channels the quantization 
+        factors. These scaling factors are used to divide, on a coefficient by 
+        coefficient manner, the DCT coefficients in each 8x8 block. Each element 
+        of the scaled coefficient values is then rounded off and converted to an 
+        integer value. The scaling factors are given in the following 
+        illustration.</P><IMG height=380 alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/ab.gif" 
+        width=315 border=0> 
+        <P><I><B>DCT coefficient quantization factors</B> - The discrete cosine 
+        transform coefficients quantization factors are given (a) for use with 
+        the luminance channel and (b) for use with both the chrominance-blue and 
+        chrominance-red channels.</I></P>
+        <P>The quantized DCT coefficients are computed by applying the 
+        quantization factors, represented as Q, to the DCT coefficients as 
+        </P><IMG alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image072.gif" 
+        border=0> 
+        <P>The factor,<IMG alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image075.gif" 
+        border=0> , given in this equation is known as the scaling factor and is 
+        derived from a quality factor specified by the user. The quality factor 
+        is specified on a scale between 0 and 100 where a factor of 100 
+        represents the best image quality (the least quantization). The 
+        relationship between the user-specified quality factor and the scaling 
+        factor is given by<BR><BR><IMG height=91 alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image078.gif" 
+        width=355 border=0><BR><IMG alt="" 
+        src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image079.gif" 
+        border=0> </P>
+        <P>and is illustrated in the following plot</P>
+        <P><I><B>DCT quantization table scale factors</B> - The DCT quantization 
+        scale factors are given as a function of the user specified quality 
+        factor.</I></P>
+        <P>Once the DCT coefficients have been scaled, quantized, and converted 
+        to integer values, the data is ready for coding and storage. As stated 
+        in the beginning of this essay, Shannon stated that it is most efficient 
+        to store a message by using the shortest codewords for the most 
+        frequently occurring symbols and longer codewords for less probable 
+        symbols. At this stage, we have conditioned the DCT coefficients in such 
+        a way that they are ready for coding redundancy reduction. </P>
+        <P>The final step in the JPEG process is to use Huffman coding to 
+        represent the conditioned DCT coefficients in as efficient manner as 
+        possible. As it is outside of the scope of this essay to give a complete 
+        description of Huffman coding, the reader is referred to the many web 
+        sites and textbooks that describe this topic in great detail. David 
+        Huffman gives the original description in his 1952 paper in the 
+        Proceeding of the I.R.E.</P>
+        <P>Now that the reader is exposed to the inner working of JPEG, some of 
+        the caveats of this widely used image compression technique must be 
+        mentioned.</P>
+        <P>1) This technique is best applied to photographs of natural 
+        scenes.</P>
+        <P>2) This technique works best when the assumption of grey-level 
+        constancy is valid in 8x8 image blocks. The technique will prove less 
+        effective providing less compression when this assumption is violated. 
+        Images with a lot of noise, for example those taking at high ISO film 
+        speed settings in low-light level situations with a digital camera, will 
+        not compress as well as those that receive plenty of exposure and 
+        contain less noise. </P>
+        <P>3) The use of JPEG for the storage of line art is not recommended. 
+        There are a lot of areas in images of line art that are constant grey 
+        level, and this is good, but the main content of interest in this type 
+        of image is the black lines on a white background, which the user 
+        expects to be crisp and sharp. The use of JPEG will result in 
+        unacceptable artifacts in blocks where there is high contrast. </P>
+        <TABLE>
+          <TBODY>
+          <TR>
+            <TD><IMG height=164 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image084.gif" 
+              width=164 border=0></TD>
+            <TD><IMG height=164 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image087.gif" 
+              width=164 border=0></TD></TR></TBODY></TABLE>
+        <P><I><B>JPEG effects on line art</B> - The image on the left is an 
+        original digital image of the serif on a lowercase "a". The image on the 
+        right shows the artifacts that are seen when this image is stored as a 
+        JPEG file with a user-specified quality factor of 20.</I></P>
+        <P>4) Never use JPEG as an intermediate storage format. JPEG should only 
+        be used to store the final image that results from your processing 
+        steps. If you take a picture, remove the red-eye, sharpen the edges, and 
+        then want to display it on the web; it is only for the final storage of 
+        the processed image for publishing that JPEG should be used.</P>
+        <P>5) One final note. As convenient as it is to store hundreds of images 
+        on the storage media in your digital camera, you might want to 
+        reconsider using JPEG as the default storage format (see the figure 
+        below). If you are going to be processing the images after you download 
+        them from your camera, you may want to consider a lossless format such 
+        as TIFF or RAW for use in your camera. </P>
+        <TABLE>
+          <TBODY>
+          <TR>
+            <TD><IMG height=124 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image090.gif" 
+              width=150 border=0></TD>
+            <TD><IMG height=124 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image093.gif" 
+              width=150 border=0></TD>
+            <TD><IMG height=124 alt="" 
+              src="What is Inside a JPEG File --The Society for Imaging Science and Technology_files/image096.gif" 
+              width=150 border=0></TD></TR>
+          <TR>
+            <TD align=middle>(a)</TD>
+            <TD align=middle>(b)</TD>
+            <TD align=middle>(c)</TD></TR></TBODY></TABLE>
+        <P><I><B>Effects of JPEG </B>- The effects of using the JPEG file format 
+        are shown. The image shown in (a) is the original image. Image (b) shows 
+        the results of JPEG compression using a "medium" quality setting on a 
+        digital camera. Image (c) shows the results of JPEG compression using a 
+        "low" quality setting on a digital camera. While higher quality setting 
+        will not result in such objectionable images, the photographer should 
+        always be cognizant that these 8x8 blocking artifacts will always be 
+        present in any image saved as a JPEG file from a digital camera or saved 
+        as a processed product from an image processing 
+        program.</I></P></FONT><FONT face=arial,helvetica>
+        <HR SIZE=1>
+
+        <CENTER>To report a website error, please contact <A 
+        href="mailto:webmaster@imaging.org">webmaster@imaging.org</A><BR>For all 
+        other questions E-mail:<A 
+        href="mailto:info@imaging.org">mailto:info@imaging.org</A><BR>IS&amp;T, 
+        7003 Kilworth Lane, Springfield, VA 22151<BR>Phone: 703-642-9090; Fax: 
+        703-642-9094; </CENTER>
+        <HR SIZE=1>
+        <FONT face=arial,helvetica color=#000000 size=-2><I 
+        style="FONT-SIZE: 0.8em">© The Society for Imaging Science and 
+        Technology<BR></I></FONT></BLOCKQUOTE></FONT></TD></TR></TBODY></TABLE>
+<CENTER></CENTER></FONT></BODY></HTML>

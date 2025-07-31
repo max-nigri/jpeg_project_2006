@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0083)http://www.cs.sfu.ca/CourseCentral/365/li/material/notes/Chap4/Chap4.2/Chap4.2.html -->
+<HTML><HEAD><TITLE>4.2. Image Compression -- JPEG</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR></HEAD>
+<BODY>
+<H2><A name=TOP>4.2. Image Compression -- JPEG</A></H2><B><A 
+href="http://www.cs.sfu.ca/CourseCentral/365/li/material/notes/Chap4/Chap4.2/Chap4.2.html#Overview">Overview 
+of JPEG</A></B> <BR><B><A 
+href="http://www.cs.sfu.ca/CourseCentral/365/li/material/notes/Chap4/Chap4.2/Chap4.2.html#Steps">Major 
+Steps</A></B> <BR><B><A 
+href="http://www.cs.sfu.ca/CourseCentral/365/li/material/notes/Chap4/Chap4.2/Chap4.2.html#Bitstream">A 
+Glance at the JPEG Bitstream</A></B> <BR><B><A 
+href="http://www.cs.sfu.ca/CourseCentral/365/li/material/notes/Chap4/Chap4.2/Chap4.2.html#Modes">Four 
+JPEG Modes</A></B> <BR><B><A 
+href="http://www.cs.sfu.ca/CourseCentral/365/li/material/notes/Chap4/Chap4.2/Chap4.2.html#JPEG2000">JPEG 
+2000</A></B> 
+<P><IMG src="4_2_ Image Compression -- JPEG_files/orangeball.gif" align=bottom> 
+<I>Reference: </I>W.B. Pennebaker, J.L. Mitchell, "The JPEG Still Image Data 
+Compression Standard", Van Nostrand Reinhold, 1993. 
+<P><IMG src="4_2_ Image Compression -- JPEG_files/line_rain.gif" width="100%" 
+align=bottom> <PRE>  
+</PRE>
+<H2><A name=Overview>4.2.1. Overview of JPEG</A></H2>
+<HR>
+
+<H3>What is <A href="http://www.jpeg.org/public/jpeglinks.htm">JPEG</A>?</H3>
+<UL>
+  <LI>"Joint Photographic Expert Group". Voted as international standard in 
+  1992. 
+  <P></P>
+  <LI>Works with color and grayscale images, e.g., satellite, medical, ... 
+</LI></UL>
+<H3>Motivation</H3>
+<UL>
+  <LI>The <I>compression ratio</I> of lossless methods (e.g., Huffman, 
+  Arithmetic, LZW) is not high enough for image and video compression, 
+  especially when the distribution of pixel values is relatively flat. 
+  <P></P>
+  <LI>JPEG uses <I>transform coding</I>, it is largely based on the following 
+  observations: 
+  <UL>
+    <LI>Observation 1: A large majority of useful image contents change 
+    relatively slowly across images, i.e., it is unusual for intensity values to 
+    alter up and down several times in a small area, for example, within an 8 x 
+    8 image block. Translate this into the spatial frequency domain, it says 
+    that, generally, lower spatial frequency components contain more information 
+    than the high frequency components which often correspond to less useful 
+    details and noises. 
+    <LI>Observation 2: Pshchophysical experiments suggest that humans are more 
+    receptive to loss of higher spatial frequency components than loss of lower 
+    frequency components. </LI></UL></LI></UL><!--
+<H3>??? Discussion on FREQUENCY DOMAIN ???</H3>
+-->
+<H3>JPEG overview</H3>
+<UL>
+  <LI>Encoding 
+  <P>
+  <CENTER><!--
+<IMG SRC="Topic5.fig_29.gif">
+--><IMG 
+  src="4_2_ Image Compression -- JPEG_files/jpeg-encoder.gif"> </CENTER>
+  <P></P>
+  <LI>Decoding -- Reverse the order </LI></UL><PRE>  
+</PRE>
+<H2><A name=Steps>4.2.2. Major Steps</A></H2>
+<HR>
+
+<UL>
+  <LI>DCT (Discrete Cosine Transformation) <BR>
+  <LI>Quantization <BR>
+  <LI>Zigzag Scan <BR>
+  <LI>DPCM on DC component <BR>
+  <LI>RLE on AC Components <BR>
+  <LI>Entropy Coding </LI></UL>
+<H3>1. Discrete Cosine Transform (DCT)</H3>
+<UL>
+  <LI>From spatial domain to frequency domain: 
+  <CENTER>
+  <P><IMG src="4_2_ Image Compression -- JPEG_files/DCT_fig.gif"> </CENTER>
+  <P></P>
+  <LI><B>DEFINITIONS</B> 
+  <P><B>Discrete Cosine Transform (DCT):</B> 
+  <P>
+  <CENTER><IMG src="4_2_ Image Compression -- JPEG_files/DCT.gif"> </CENTER>
+  <P><B>Inverse Discrete Cosine Transform (IDCT):</B> 
+  <P>
+  <CENTER><IMG src="4_2_ Image Compression -- JPEG_files/IDCT.gif"> </CENTER>
+  <P><B>Question</B>: What are the DC and AC components, e.g., what is F[0,0]? 
+  <P></P>
+  <LI>The 64 (8 x 8) DCT basis functions: 
+  <P>
+  <CENTER><IMG src="4_2_ Image Compression -- JPEG_files/DCT_basis.gif" 
+  width="50%"> </CENTER>
+  <P><!-- JPEG is not as good as GIF in this case.  A little blurry.
+<P>
+<CENTER>
+<IMG SRC="DCT_basis.jpg" width=50%>
+</CENTER>
+<P>
+--></P>
+  <LI>Why DCT not FFT? -- DCT is like FFT, but can approximate linear signals 
+  well with few coefficients. 
+  <P>
+  <CENTER><IMG src="4_2_ Image Compression -- JPEG_files/Topic5.fig_47.gif"> 
+  </CENTER>
+  <P></P>
+  <LI>Computing the DCT 
+  <P>
+  <UL>
+    <LI>Factoring reduces problem to a series of 1D DCTs: 
+    <CENTER>
+    <P><IMG src="4_2_ Image Compression -- JPEG_files/Topic5.fig_116.gif"> 
+    <P><IMG src="4_2_ Image Compression -- JPEG_files/Topic5.fig_117.gif"> 
+    </CENTER>
+    <P></P>
+    <LI>Most software implementations use fixed point arithmetic. Some fast 
+    implementations approximate coefficients so all multiplies are shifts and 
+    adds. <!--
+<P>
+<LI>World record is 11 multiplies and 29 adds.
+(C. Loeffler, A. Ligtenberg and G. Moschytz, "Practical Fast 1-D DCT
+Algorithms with 11 Multiplications", Proc. Int'l. Conf. on Acoustics,
+Speech, and Signal Processing 1989 (ICASSP `89), pp. 988-991)
+--></LI></UL></LI></UL>
+<H3>2. Quantization</H3>
+<UL>
+  <LI>F'[u, v] = round ( F[u, v] / q[u, v] ). 
+  <P>Why? -- To reduce number of bits per sample 
+  <P>Example: 101101 = 45 (6 bits). <BR>q[u, v] = 4 --&gt; Truncate to 4 bits: 
+  1011 = 11. 
+  <P></P>
+  <LI>Quantization error is the main source of the Lossy Compression. </LI></UL>
+<H4>Uniform Quantization</H4>
+<UL>
+  <LI>Each F[u,v] is divided by the same constant <I>N</I>. </LI></UL>
+<H4>Non-uniform Quantization -- Quantization Tables</H4>
+<UL>
+  <LI>Eye is most sensitive to low frequencies (upper left corner), less 
+  sensitive to high frequencies (lower right corner) 
+  <P></P>
+  <LI>The <I>Luminance Quantization Table</I> q(u, v) &nbsp; &nbsp; &nbsp; 
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The <I>Chrominance Quantization Table</I> 
+  q(u, v) <PRE>----------------------------------           ------------------------------
+16  11  10  16   24   40   51   61           17  18  24  47  99  99  99  99
+12  12  14  19   26   58   60   55           18  21  26  66  99  99  99  99
+14  13  16  24   40   57   69   56           24  26  56  99  99  99  99  99
+14  17  22  29   51   87   80   62           47  66  99  99  99  99  99  99
+18  22  37  56   68  109  103   77           99  99  99  99  99  99  99  99
+24  35  55  64   81  104  113   92           99  99  99  99  99  99  99  99
+49  64  78  87  103  121  120  101           99  99  99  99  99  99  99  99
+72  92  95  98  112  100  103   99           99  99  99  99  99  99  99  99
+----------------------------------           ------------------------------
+</PRE><!--
+<P>
+<LI>Q: How would changing the numbers affect the picture
+(e.g., if I doubled them all)?
+-->
+  <P>The numbers in the above quantization tables can be scaled up (or down) to 
+  adjust the so called <A 
+  href="http://www.cs.sfu.ca/CourseCentral/365/li/material/misc/compressjpeg.html"><I>quality 
+  factor</I></A>. 
+  <P>Custom quantization tables can also be put in image/scan header. 
+</P></LI></UL>
+<H3>3. Zig-zag Scan</H3>
+<UL>
+  <LI>Why? -- to group low frequency coefficients in top of vector. 
+  <P></P>
+  <LI>Maps 8 x 8 to a 1 x 64 vector 
+  <P>
+  <CENTER><IMG src="4_2_ Image Compression -- JPEG_files/Topic5.fig_125.gif"> 
+  </CENTER></LI></UL>
+<H3>4. Differential Pulse Code Modulation (DPCM) on DC component</H3>
+<UL>
+  <LI>DC component is large and varied, but often close to previous value. 
+  <P></P>
+  <LI>Encode the difference from previous 8 x 8 blocks -- DPCM </LI></UL>
+<H3>5. Run Length Encode (RLE) on AC components</H3>
+<UL>
+  <LI>1 x 64 vector has lots of zeros in it 
+  <P></P>
+  <LI>Keeps <I>skip</I> and <I>value</I>, where <I>skip</I> is the number of 
+  zeros and <I>value</I> is the next non-zero component. 
+  <P></P>
+  <LI>Send (0,0) as end-of-block sentinel value. </LI></UL>
+<H3>6. Entropy Coding</H3>
+<UL>
+  <LI>Categorize DC values into SIZE (number of bits needed to represent) and 
+  actual bits. <PRE>    ------------------------------------
+       SIZE               Value
+    ------------------------------------
+         1               -1, 1
+         2           -3, -2, 2, 3
+         3           -7..-4, 4..7
+	 4          -15..-8, 8..15
+	 .                  .
+	 .                  .
+	 .                  .
+	10      -1023..-512, 512..1023
+    ------------------------------------
+</PRE>
+  <P><I>Example</I>: if DC value is 4, 3 bits are needed. 
+  <P>Send off SIZE as Huffman symbol, followed by actual 3 bits. 
+  <P></P>
+  <LI>For AC components two symbols are used: Symbol_1: (<I>skip, SIZE</I>), 
+  Symbol_2: actual bits. Symbol_1 (<I>skip, SIZE</I>) is encoded using the 
+  Huffman coding, Symbol_2 is not encoded. 
+  <P></P>
+  <LI>Huffman Tables can be custom (sent in header) or default. </LI></UL><PRE>  
+</PRE>
+<H2><A name=Bitstream>4.2.3. A Glance at the JPEG Bitstream</A></H2>
+<HR>
+
+<P>
+<CENTER><IMG src="4_2_ Image Compression -- JPEG_files/Topic5.fig_1.gif"> 
+</CENTER>
+<UL>
+  <LI>A "Frame" is a picture, a "scan" is a pass through the pixels (e.g., the 
+  red component), a "segment" is a group of blocks, a "block" is an 8 x 8 group 
+  of pixels. 
+  <P></P>
+  <LI>Frame header: <BR>sample precision <BR>(width, height) of image <BR>number 
+  of components <BR>unique ID (for each component) <BR>horizontal/vertical 
+  sampling factors (for each component) <BR>quantization table to use (for each 
+  component) 
+  <P></P>
+  <LI>Scan header <BR>Number of components in scan <BR>component ID (for each 
+  component) <BR>Huffman table for each component (for each component) 
+  <P></P>
+  <LI>Misc. (can occur between headers) <BR>Quantization tables <BR>Huffman 
+  Tables <BR>Arithmetic Coding Tables <BR>Comments <BR>Application Data </LI></UL><PRE>  
+</PRE>
+<H2><A name=Modes>4.2.4. Four JPEG Modes</A></H2>
+<HR>
+
+<UL>
+  <LI>Sequential Mode 
+  <LI>Lossless Mode 
+  <LI>Progressive Mode 
+  <LI>Hierarchical Mode 
+  <P>** In "Motion JPEG", Sequential JPEG is applied to each image in a video. 
+  </P></LI></UL>
+<H3>1. Sequential Mode</H3>
+<UL>
+  <LI>Each image component is encoded in a single left-to-right, top-to-bottom 
+  scan. 
+  <P><I>Baseline Sequential Mode</I>, the one that we described above, is a 
+  simple case of the Sequential mode: 
+  <UL>
+    <LI>It supports only 8-bit images (not 12-bit images) 
+    <LI>It uses only Huffman coding (not Arithmetic coding) </LI></UL></LI></UL>
+<H3>2. Lossless Mode</H3>
+<UL>
+  <LI>A special case of the JPEG where indeed there is no loss. 
+  <P>Its block diagram is as below: 
+  <P>
+  <CENTER><IMG src="4_2_ Image Compression -- JPEG_files/Topic4.fig_32.gif"> 
+  </CENTER>
+  <P></P>
+  <LI>It does not use DCT-based method! Instead, it uses a <I>predictive</I> 
+  (differential coding) method: <BR>A predictor combines the values of up to 
+  three neighboring pixels (not blocks as in the Sequential mode) as the 
+  predicted value for the current pixel, indicated by "X" in the figure below. 
+  The encoder then compares this prediction with the actual pixel value at the 
+  position "X", and encodes the difference (prediction residual) losslessly. 
+  <P>
+  <CENTER><IMG src="4_2_ Image Compression -- JPEG_files/lossless.gif"> 
+</CENTER>
+  <P></P>
+  <LI>It can use any one of the following seven predictors : 
+  <P>
+  <CENTER>
+  <TABLE cellPadding=10 border=1>
+    <TBODY>
+    <TR>
+      <TD align=middle><B>Predictor</B></TD>
+      <TD align=middle><B>Prediction</B></TD></TR>
+    <TR>
+      <TD align=middle>1</TD>
+      <TD>A</TD></TR>
+    <TR>
+      <TD align=middle>2</TD>
+      <TD>B</TD></TR>
+    <TR>
+      <TD align=middle>3</TD>
+      <TD>C</TD></TR>
+    <TR>
+      <TD align=middle>4</TD>
+      <TD>A + B - C</TD></TR>
+    <TR>
+      <TD align=middle>5</TD>
+      <TD>A + (B - C) / 2</TD></TR>
+    <TR>
+      <TD align=middle>6</TD>
+      <TD>B + (A - C) / 2</TD></TR>
+    <TR>
+      <TD align=middle>7</TD>
+      <TD>(A + B) / 2</TD></TR></TBODY></TABLE></CENTER>
+  <P>Since it uses only previously encoded neighbors, the very first pixel I(0, 
+  0) will have to use itself. Other pixels at the first row always use P1, at 
+  the first column always use P2. 
+  <P></P>
+  <LI>Effect of Predictor (test result with 20 images): 
+  <P>
+  <CENTER><IMG src="4_2_ Image Compression -- JPEG_files/Topic4.fig_86.gif"> 
+  </CENTER>
+  <P><B>Note</B>: "2D" predictors (4-7) always do better than "1D" predictors. 
+  </P></LI></UL>
+<P><B>Comparison with Other Lossless Compression Programs (compression 
+ratio):</B> 
+<CENTER><PRE>-----------------------------------------------------------------
+     <B>Compression Program              Compression Ratio        
+                               Lena  football    F-18   flowers </B>
+-----------------------------------------------------------------
+        lossless JPEG           1.45     1.54     2.29     1.26   
+    optimal lossless JPEG       1.49     1.67     2.71     1.33   
+       compress (LZW)           0.86     1.24     2.21     0.87   
+      gzip (Lempel-Ziv)         1.08     1.36     3.10     1.05   
+gzip -9 (optimal Lempel-Ziv)    1.08     1.36     3.13     1.05   
+       pack (Huffman coding)      1.02     1.12     1.19     1.00     
+-----------------------------------------------------------------
+
+</PRE></CENTER>
+<H3>3. Progressive Mode</H3>
+<UL>
+  <LI>Goal: display low quality image and successively improve. 
+  <P></P>
+  <LI>Two ways to successively improve image: 
+  <P>
+  <OL>
+    <LI><I>Spectral selection</I>: Send DC component and first few AC 
+    coefficients first, then gradually some more ACs. 
+    <P></P>
+    <LI><I>Successive approximation</I>: send DCT coefficients MSB (most 
+    significant bit) to LSB (least significant bit). <BR>(Effectively, it is 
+    sending quantized DCT coefficients frist, and then the difference between 
+    the quantized and the non-quantized coefficients with finer quantization 
+    stepsize.) </LI></OL></LI></UL>
+<H3>4. Hierarchical Mode</H3><B>A Three-level Hierarchical JPEG Encoder</B> 
+<P>(From <I>V. Bhaskaran and K. Konstantinides, "Image and Video Compression 
+Standards: Algorithms and Architectures", 2nd ed., Kluwer Academic Publishers, 
+1997.</I>) 
+<P>
+<CENTER><IMG src="4_2_ Image Compression -- JPEG_files/hier_jpeg.gif"> </CENTER>
+<P>
+<UL>(a) Down-sample by factors of 2 in each dimension, e.g., reduce 640 x 480 
+  to 320 x 240 
+  <P>(b) Code smaller image using another JPEG mode (Progressive, Sequential, or 
+  Lossless). 
+  <P>(c) Decode and up-sample encoded image 
+  <P>(d) Encode difference between the up-sampled and the original using 
+  Progressive, Sequential, or Lossless. 
+  <P>
+  <LI>Can be repeated multiple times. 
+  <P></P>
+  <LI>Good for viewing high resolution image on low resolution display. </LI></UL><PRE>  
+</PRE>
+<H2><A name=JPEG2000>4.2.5. <A href="http://www.jpeg.org/JPEG2000.htm">JPEG 
+2000</A></A></H2>
+<HR>
+
+<UL>
+  <LI>JPEG 2000 is the upcoming standard for Still Pictures (due Year 2000). 
+  <LI>Major change from the current JPEG is that wavelets will replace DCT as 
+  the means of transform coding. 
+  <LI>Among many things it will address: 
+  <UL>
+    <LI>Low bit-rate compression performance, 
+    <LI>Lossless and lossy compression in a single codestream, 
+    <LI>Transmission in noisy environment where bit-error is high, 
+    <LI>Application to both gray/color images and bi-level (text) imagery, 
+    natural imagery and computer generated imagery, 
+    <LI>Interface with MPEG-4, 
+    <LI>Content-based description. </LI></UL></LI></UL>
+<P>
+<H3>Further Exploration <IMG 
+src="4_2_ Image Compression -- JPEG_files/magnifytitle.gif"></H3>Try the <A 
+href="http://www.cs.sfu.ca/CC/365/li/interactive-jpeg/Ijpeg.html">Interactive 
+JPEG examples</A> and the <A 
+href="http://www.cs.sfu.ca/CourseCentral/365/li/material/misc/compressjpeg.html">JPEG 
+examples</A>. 
+<P>Information about <A href="http://www.jpeg.org/JPEG2000.htm">JPEG 2000</A>. 
+<HR>
+<!--
+<H6><B>Last Updated: </B><I>3/6/00</I></H6>
+--><PRE>  
+</PRE><A 
+href="http://www.cs.sfu.ca/CourseCentral/365/li/material/notes/Chap4/Chap4.2/Chap4.2.html#TOP">Top</A> 
+| <A 
+href="http://www.cs.sfu.ca/CourseCentral/365/li/material/notes/Chap4/Chap4.html">Chap 
+4</A> | <A href="http://www.cs.sfu.ca/CourseCentral/365/li/index.html">CMPT 365 
+Home Page</A> | <A href="http://fas.sfu.ca/cs/">CS</A> </BODY></HTML>

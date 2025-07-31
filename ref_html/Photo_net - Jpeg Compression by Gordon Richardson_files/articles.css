@@ -1,0 +1,90 @@
+DIV.content {
+	MARGIN-TOP: 50px; FONT-SIZE: 100%; MARGIN-LEFT: 10%; MARGIN-RIGHT: 10%
+}
+#skyad-right {
+	PADDING-LEFT: 10px; FLOAT: right; PADDING-TOP: 20px
+}
+#skyad-left {
+	PADDING-RIGHT: 10px; FLOAT: left; PADDING-TOP: 20px
+}
+H1 {
+	MARGIN-TOP: 7px; FONT-WEIGHT: bolder; FONT-SIZE: 140%; MARGIN-BOTTOM: 3px
+}
+H2 {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 1.5em; PADDING-LEFT: 0px; FONT-WEIGHT: bolder; FONT-SIZE: 110%; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UNKNOWN {
+	MARGIN-TOP: 3px
+}
+UNKNOWN {
+	MARGIN-TOP: 3px
+}
+UNKNOWN {
+	MARGIN-TOP: 3px
+}
+H3 {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; FONT-SIZE: 100%; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UNKNOWN {
+	MARGIN-TOP: 1em
+}
+UNKNOWN {
+	MARGIN-TOP: 0px
+}
+DIV.byline {
+	MARGIN-TOP: 0px
+}
+DIV.endtop {
+	CLEAR: left; BORDER-TOP: black 1px solid; MARGIN-TOP: 20px
+}
+DIV.topmatter {
+	BORDER-TOP: black 1px solid; BORDER-BOTTOM: black 1px solid; POSITION: relative
+}
+DIV.topmatter IMG {
+	RIGHT: 5px; POSITION: absolute; TOP: 10px
+}
+DIV.content IMG {
+	MARGIN: 5px
+}
+IMG.illustration {
+	FLOAT: right; MARGIN: 5px
+}
+IMG.illustrationL {
+	FLOAT: left; MARGIN: 5px
+}
+IMG.illustrationR {
+	FLOAT: right; MARGIN: 5px
+}
+DIV.toc {
+	MARGIN-TOP: 10px; FONT-SIZE: 90%
+}
+DIV.toc H2 {
+	MARGIN-TOP: 14px; FONT-WEIGHT: bolder; FONT-SIZE: 8pt; margin-botton: 0px
+}
+DIV.endmatter {
+	CLEAR: both; BORDER-TOP: black 1px solid; MARGIN-TOP: 10px; FONT-SIZE: 80%; MARGIN-BOTTOM: 15px; FONT-STYLE: italic
+}
+DIV.comments {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 10%; BORDER-TOP: #cccccc 1px solid; MARGIN-TOP: 20px; PADDING-LEFT: 10%; FONT-WEIGHT: normal; PADDING-BOTTOM: 20px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; FONT-STYLE: normal
+}
+DIV.comment_list {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 10%; BORDER-TOP: #cccccc 1px solid; MARGIN-TOP: 20px; PADDING-LEFT: 10%; FONT-WEIGHT: normal; PADDING-BOTTOM: 20px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; FONT-STYLE: normal
+}
+H3 {
+	FONT-SIZE: 100%; MARGIN-BOTTOM: 3px; COLOR: #003366
+}
+SPAN.caption {
+	FONT-STYLE: italic; TEXT-ALIGN: center
+}
+DIV.byline {
+	COLOR: #0000a0; FONT-FAMILY: sans-serif; FONT-VARIANT: small-caps
+}
+DIV.byline A:link {
+	COLOR: #0000a0
+}
+DIV.byline A:visited {
+	COLOR: #0000a0
+}
+DIV.sep {
+	MARGIN-TOP: 5px; TEXT-ALIGN: center
+}
