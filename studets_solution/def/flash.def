@@ -1,0 +1,9 @@
+// FSM states defines:
+`define FLASH_IDLE 3'd0
+`define FLASH_GET_FILE_NAME 3'd1
+`define FLASH_READ 3'd2
+`define FLASH_WRITE 3'd3
+// master cmd defines
+`define CMD_NOP 2'b00
+`define CMD_READ 2'b01
+`define CMD_WRITE 2'b10

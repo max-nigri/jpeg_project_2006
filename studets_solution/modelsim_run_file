@@ -1,0 +1,6 @@
+vlib work
+vlog -work work -f list
+vsim -novopt work.jpeg_encoder
+log -r /*
+do wave.do
+run 3ms

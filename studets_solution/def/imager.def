@@ -1,0 +1,7 @@
+`define IDLE 3'd0
+`define IMAGER_X_LOW 3'd1
+`define IMAGER_X_HIGH 3'd2
+`define IMAGER_Y_LOW 3'd3
+`define IMAGER_Y_HIGH 3'd4
+`define IMAGE_RGB_DATA 3'd5
+`define IMAGE_YUV_DATA 3'd6

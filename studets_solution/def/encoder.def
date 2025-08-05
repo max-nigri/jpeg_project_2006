@@ -1,0 +1,89 @@
+////////////////////// imager_parser.v //////////////////////
+`define X_LOW 3'd0
+`define X_HIGH 3'd1
+`define Y_LOW 3'd2
+`define Y_HIGH 3'd3
+`define RGB 3'd4
+
+//////////////////////// rgb2ycbcr.v ////////////////////////
+// Constant values of RGB_2_YCbCr transform: 
+`define FP_0P299 24'h4C8B_FF        // 0.299
+`define FP_0P587 24'h4B23_00        // 0.587
+`define FP_0P114 24'h74BC_FD        // 0.114
+`define FP_MINUS_0P1687 24'hA9A0_FE // -0.1687
+`define FP_MINUS_0P3313 24'hAB30_FF // -0.3313
+`define FP_0P5 24'h4000_00          // 0.5
+`define FP_MINUS_128 24'h8000_07    // -128
+`define FP_MINUS_0P4187 24'h94D0_FF // -0.4187
+`define FP_MINUS_0P0813 24'hACC0_FD // -0.0813
+// State machine states:
+`define R0 4'd0
+`define R1 4'd1
+`define R2 4'd2
+`define G0 4'd3
+`define G1 4'd4
+`define G2 4'd5
+`define B0 4'd6
+`define B1 4'd7
+`define B2 4'd8
+`define B3 4'd9
+
+///////////////////// huffman_control.v /////////////////////
+`define HUFFMAN_IDLE 0
+`define HUFFMAN_DC_CALC 1
+`define HUFFMAN_CALC 2
+`define HUFFMAN_PRO_CALC 3
+
+/////////////////////////// dct.v ///////////////////////////
+`define DCT_IDLE 0
+`define DCT_CALC 1
+`define DCT_PRE_CALC 2
+`define DCT_PRO_CALC 3
+
+
+//////////////////// quantization_ctrl.v ////////////////////
+`define QUAN_IDLE 2'd0
+`define QUAN_WAIT 2'd1
+`define QUAN_CALC 2'd2
+
+/////////////////////// date_writer.v ///////////////////////
+`define DATE_IDLE 2'd0
+`define DATE_READ_DIGIT 2'd1
+`define DATE_MASK 2'd2
+`define DATE_NXT_MASK 2'd3
+
+/////////////////// data_writer_control.v ///////////////////
+`define FW_IDLE 0
+`define FW_MOD_CALC 1
+`define FW_EOF_WRITE 2
+`define FW_DONE 3
+`define FW_WRITE 1
+`define FW_PRO_WRITE 2
+`define EOF_TAG 32'hd9ff
+
+////////////////// header_writer_control.v //////////////////
+`define HEADER_IDLE 0
+`define HEADER_WRITE 1
+`define SOI 16'hffd8       //SOI Marker
+`define APP0 16'hffe0      //APP Marker
+`define APP1 32'h00104a46  //16+"JF"
+`define APP2 32'h49460001  //"IF"+'/0',1
+`define APP3 32'h01000001  // ,1,0,1
+`define APP4 32'h00010000  // ,1,0,0
+`define DQT0 32'hFFDB0084  // Marker FFDB + length 132 = 0084
+`define DQT1 8'h00         //QTYinfo, than start writing the Y table.
+`define DQT2 8'h01         //QTCbinfo
+`define SOF0 16'hffc0      //SOF Marker   
+`define SOF_LENGTH 16'h0011 //length=17
+`define SOF_PRECISION 8'h08 // percision=8 + transmit height 1 MSBytes
+`define SOF_NROFCOMPONENTS 8'h03
+`define SOF1 32'h01110002  //Idy,HvY,QtY,IdCb
+`define SOF2 32'h11010311  //HVCb,QTCb,IDCr,HVCr
+`define SOF_QTCR 8'h01     //QTCr
+`define DHT0 24'hffc401    //start of dht table
+`define DHT1 8'hfa         //end of dht table
+`define SOS0 24'hffda00    //marker + length=12 
+`define SOS1 32'h0c030100  //components+IDY+HTY+IDCB
+`define SOS2 32'h02110311  //HTCB,IDCR,HTCR
+`define SOS3 24'h003f00    //SS,SE,BF
+`define EOI 16'hffd9       //EOI Marker
