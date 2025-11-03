@@ -1,5 +1,7 @@
 # JPEG Encoder Hardware Project
 
+Developed by Max Nigri
+
 ## Overview
 This repository documents a hardware design project developed as part of the **Advanced Logic Design** course I taught at the **Computer Engineering Department, The Hebrew University of Jerusalem**, from 2006 to 2017.  
 
